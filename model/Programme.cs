@@ -13,7 +13,7 @@ public class Programme
     private static int nombreTotalProgramme = 0;
     
     //Le constructeur oblige la présence d'un cours pour satisfaire l'exigence 1..* du lien entre Programme et Cours.
-    public Programme(int idProgramme, string titreProgramme, DateTime dateCreation, int nombreDeCredit, int dureeProgrammeEnMois, string nomCours, string categorieCours, typeSalle typeSalleCours)
+    public Programme(int idProgramme, string titreProgramme, DateTime dateCreation, int nombreDeCredit, int dureeProgrammeEnMois, Cours cours)
     {
         this.idProgramme = idProgramme;
         this.titreProgramme = titreProgramme;
@@ -21,7 +21,6 @@ public class Programme
         this.nombreDeCredit = nombreDeCredit;
         this.dureeProgrammeEnMois = dureeProgrammeEnMois;
         this.listeCours = new HashSet<Cours>();
-        Cours cours = new Cours(nomCours, categorieCours, typeSalleCours, this);
         this.listeCours.Add(cours);
         nombreTotalProgramme++;
     }
