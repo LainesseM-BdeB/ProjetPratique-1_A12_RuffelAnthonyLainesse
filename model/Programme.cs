@@ -54,4 +54,18 @@ public class Programme
     }
 
     public static int NombreTotalProgramme => nombreTotalProgramme;
+
+    public void afficherProgramme()
+    {
+        Console.WriteLine($"ID du programme: {IdProgramme}");
+        Console.WriteLine($"Nom du programme: {TitreProgramme}");
+        Console.WriteLine($"Date de création: {DateCreation}");
+        Console.WriteLine($"Nombre de crédit: {NombreDeCredit}");
+        Console.WriteLine($"Durée du programme en mois: {DureeProgrammeEnMois}");
+    }
+
+    public void afficherNombreTotal()
+    {
+        Console.WriteLine($"Nombre total de programme: {NombreTotalProgramme}");
+    }
 }
