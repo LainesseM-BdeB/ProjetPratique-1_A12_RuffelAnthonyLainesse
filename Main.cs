@@ -31,7 +31,7 @@ Programme cyberSecurite = new Programme(
 );
 
 Cours test2 = new Cours("Test2", "Test2", typeSalle.LABORATOIRE, cyberSecurite);
-Cours test3 = new Cours("T1", "T1", typeSalle.AUDITOIRE, cyberSecurite);
+Cours test3 = new Cours("T", "T", typeSalle.AUDITOIRE, cyberSecurite);
 
 test3.afficherDetailCours();
 
