@@ -8,10 +8,11 @@ public class Programme
     private int nombreDeCredit;
     private int dureeProgrammeEnMois;
 
-    private HashSet<Cours> listeCours;
+    private HashSet<Cours> listeCours; //Set de cours pour satisfaire le lien 1 à 1..* du diagramme de classe.
 
     private static int nombreTotalProgramme = 0;
     
+    //Le constructeur oblige la présence d'un cours pour satisfaire l'exigence 1..* du lien entre Programme et Cours.
     public Programme(int idProgramme, string titreProgramme, DateTime dateCreation, int nombreDeCredit, int dureeProgrammeEnMois, Cours cours)
     {
         this.idProgramme = idProgramme;
@@ -56,6 +57,7 @@ public class Programme
 
     public static int NombreTotalProgramme => nombreTotalProgramme;
 
+    //Fonction pour afficher les détails du programme. Pour la liste des cours seuelement le nom est affiché.
     public void afficherProgramme()
     {
         Console.WriteLine("\n################################################");
@@ -75,6 +77,7 @@ public class Programme
 
     public HashSet<Cours> ListeCours => listeCours;
 
+    //Fonction pour extraire les nom de cours qui seront utilisés dans la function afficherProgramme
     private List<string> extraireNomCours()
     {
         List<string> listeNomCours = new List<string>();
@@ -84,6 +87,8 @@ public class Programme
         }
         return listeNomCours;
     }
+    
+    //Fonction pour ajouter un cours au programme.
     public Boolean ajouterCours(Cours cours)
     {
         if (ListeCours.Contains(cours))
