@@ -13,7 +13,8 @@ public class Programme
     private static int nombreTotalProgramme = 0;
     
     //Le constructeur oblige la présence des infromations d'un cours pour satisfaire l'exigence 1 à 1..* du lien entre Programme et Cours.
-    public Programme(int idProgramme, string titreProgramme, DateTime dateCreation, int nombreDeCredit, int dureeProgrammeEnMois, string nomCours, string categorieCours, typeSalle typeSalleCours)
+    //Constructeur pour programme avec un cours Laboratoire
+    public Programme(int idProgramme, string titreProgramme, DateTime dateCreation, int nombreDeCredit, int dureeProgrammeEnMois, string nomCours, string categorieCours, typeSalle typeSalleCours, typeSystemExploitation se)
     {
         this.idProgramme = idProgramme;
         this.titreProgramme = titreProgramme;
@@ -21,7 +22,20 @@ public class Programme
         this.nombreDeCredit = nombreDeCredit;
         this.dureeProgrammeEnMois = dureeProgrammeEnMois;
         this.listeCours = new HashSet<Cours>();
-        Cours cours = new Cours(nomCours, categorieCours, typeSalleCours, this);
+        Laboratoire cours = new Laboratoire(nomCours, categorieCours, typeSalleCours, this, se);
+        nombreTotalProgramme++;
+    }
+    
+    ////Constructeur pour programme avec un cours Théorique
+    public Programme(int idProgramme, string titreProgramme, DateTime dateCreation, int nombreDeCredit, int dureeProgrammeEnMois, string nomCours, string categorieCours, typeSalle typeSalleCours, int nbdeCreditCours)
+    {
+        this.idProgramme = idProgramme;
+        this.titreProgramme = titreProgramme;
+        this.dateCreation = dateCreation;
+        this.nombreDeCredit = nombreDeCredit;
+        this.dureeProgrammeEnMois = dureeProgrammeEnMois;
+        this.listeCours = new HashSet<Cours>();
+        Theorique cours = new Theorique(nomCours, categorieCours, typeSalleCours, this, nbdeCreditCours);
         nombreTotalProgramme++;
     }
 

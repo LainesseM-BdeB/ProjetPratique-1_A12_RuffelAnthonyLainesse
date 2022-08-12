@@ -26,7 +26,7 @@ namespace ProjetPratique_1_A12_RuffelAnthonyLainesse.model
             set => typeSystemExploitation = value;
         }
 
-        private void AfficherSystemExploitation()
+        public void AfficherSystemExploitation()
         {
 
             while (typeSystemExploitation != null)
