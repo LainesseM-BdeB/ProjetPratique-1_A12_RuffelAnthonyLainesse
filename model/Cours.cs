@@ -24,12 +24,12 @@ public class Cours
         programme.ListeCours.Add(this);
     }
 
-    public string GenererSigleCours(String nomCours, Programme programme)
+    private string GenererSigleCours(String nomCours, Programme programme)
     {
         string sigle;
         if (nomCours.Length < 3)
         {
-            sigle = this.nomCours;
+            sigle = nomCours;
             for (int i = 0; i < 3 - nomCours.Length; i++)
             {
                 sigle += "X";
@@ -37,7 +37,7 @@ public class Cours
         }
         else
         {
-            sigle = nomCours.Substring(0, 3);
+            sigle = nomCours.Substring(0, 2) + nomCours.Substring(nomCours.Length-1);
         }
 
         string month = DateTime.Now.Month.ToString();
@@ -70,9 +70,9 @@ public class Cours
 
     public void afficherDetailCours()
     {
-        Console.WriteLine(this.SigleCours);
-        Console.WriteLine(this.NomCours);
-        Console.WriteLine(this.CategorieCours);
-        Console.WriteLine(this.TypeSalleCours);
+        Console.WriteLine($"Sigle du cours: {this.SigleCours}");
+        Console.WriteLine($"Nom du cours: {this.NomCours}");
+        Console.WriteLine($"Categorie du cours: {this.CategorieCours}");
+        Console.WriteLine($"Type de salle: {this.TypeSalleCours}");
     }
 }
