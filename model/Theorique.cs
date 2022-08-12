@@ -9,8 +9,8 @@
 
         public int NombreCredits { get => nombreCredits; set => nombreCredits = value; }
 
-        public Theorique(string sigleCours, string nomCours, string categorieCours, typeSalle typeSalleCours, int nombreCredits) : 
-                         base(sigleCours,nomCours,categorieCours, typeSalleCours) 
+        public Theorique( string nomCours, string categorieCours, typeSalle typeSalleCours, Programme programme, int nombreCredits) : 
+                         base(nomCours,categorieCours, typeSalleCours, programme) 
         { 
         
             this.nombreCredits = nombreCredits; 
