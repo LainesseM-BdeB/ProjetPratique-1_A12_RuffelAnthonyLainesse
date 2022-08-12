@@ -67,6 +67,7 @@ public class Programme
         Console.WriteLine($"Date de création: {DateCreation}");
         Console.WriteLine($"Nombre de crédit: {NombreDeCredit}");
         Console.WriteLine($"Durée du programme en mois: {DureeProgrammeEnMois}");
+        Console.Write($"Les cours du programme sont: {String.Join(", ", ListeCours)}");
     }
 
     public void afficherNombreTotal()
