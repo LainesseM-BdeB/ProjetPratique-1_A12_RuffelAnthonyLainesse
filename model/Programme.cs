@@ -11,13 +11,8 @@ public class Programme
     private HashSet<Cours> listeCours;
 
     private static int nombreTotalProgramme = 0;
-
-    public Programme()
-    {
-        nombreTotalProgramme++;
-    }
-
-    public Programme(int idProgramme, string titreProgramme, DateTime dateCreation, int nombreDeCredit, int dureeProgrammeEnMois)
+    
+    public Programme(int idProgramme, string titreProgramme, DateTime dateCreation, int nombreDeCredit, int dureeProgrammeEnMois, Cours cours)
     {
         this.idProgramme = idProgramme;
         this.titreProgramme = titreProgramme;
@@ -25,6 +20,7 @@ public class Programme
         this.nombreDeCredit = nombreDeCredit;
         this.dureeProgrammeEnMois = dureeProgrammeEnMois;
         this.listeCours = new HashSet<Cours>();
+        this.listeCours.Add(cours);
         nombreTotalProgramme++;
     }
 
@@ -62,12 +58,14 @@ public class Programme
 
     public void afficherProgramme()
     {
+        Console.WriteLine("\n################################################");
         Console.WriteLine($"ID du programme: {IdProgramme}");
         Console.WriteLine($"Nom du programme: {TitreProgramme}");
         Console.WriteLine($"Date de création: {DateCreation}");
         Console.WriteLine($"Nombre de crédit: {NombreDeCredit}");
         Console.WriteLine($"Durée du programme en mois: {DureeProgrammeEnMois}");
-        Console.Write($"Les cours du programme sont: {String.Join(", ", ListeCours)}");
+        Console.WriteLine($"Les cours du programme sont: {String.Join(", ", extraireNomCours())}");
+        Console.WriteLine("################################################\n");
     }
 
     public void afficherNombreTotal()
@@ -77,6 +75,15 @@ public class Programme
 
     public HashSet<Cours> ListeCours => listeCours;
 
+    private List<string> extraireNomCours()
+    {
+        List<string> listeNomCours = new List<string>();
+        foreach (Cours cours in ListeCours)
+        {
+            listeNomCours.Add(cours.NomCours);
+        }
+        return listeNomCours;
+    }
     public Boolean ajouterCours(Cours cours)
     {
         if (ListeCours.Contains(cours))
