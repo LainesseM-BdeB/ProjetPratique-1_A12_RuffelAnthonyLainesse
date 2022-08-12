@@ -12,6 +12,7 @@ public class Programme
 
     public Programme()
     {
+        nombreTotalProgramme++;
     }
 
     public Programme(int idProgramme, string titreProgramme, DateTime dateCreation, int nombreDeCredit, int dureeProgrammeEnMois)
@@ -21,6 +22,7 @@ public class Programme
         this.dateCreation = dateCreation;
         this.nombreDeCredit = nombreDeCredit;
         this.dureeProgrammeEnMois = dureeProgrammeEnMois;
+        nombreTotalProgramme++;
     }
 
     public int IdProgramme
