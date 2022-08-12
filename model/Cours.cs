@@ -6,7 +6,7 @@ public enum typeSalle
     AUDITOIRE,
     AMPHITHEATRE
 }
-public class Cours
+public abstract class Cours
 {
     private string sigleCours;
     private string nomCours;

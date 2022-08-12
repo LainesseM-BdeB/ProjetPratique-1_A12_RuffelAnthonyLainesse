@@ -18,8 +18,6 @@ namespace ProjetPratique_1_A12_RuffelAnthonyLainesse.model
         {
 
             this.typeSystemExploitation = systemExploitation;
-
-
         }
 
         public typeSystemExploitation TypeSystemExploitation
