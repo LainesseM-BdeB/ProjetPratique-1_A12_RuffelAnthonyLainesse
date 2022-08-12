@@ -8,16 +8,12 @@ public class Programme
     private int nombreDeCredit;
     private int dureeProgrammeEnMois;
 
-    private HashSet<Cours> listeCours;
+    private HashSet<Cours> listeCours; //Set de cours pour satisfaire le lien 1 à 1..* du diagramme de classe.
 
     private static int nombreTotalProgramme = 0;
-
-    public Programme()
-    {
-        nombreTotalProgramme++;
-    }
-
-    public Programme(int idProgramme, string titreProgramme, DateTime dateCreation, int nombreDeCredit, int dureeProgrammeEnMois)
+    
+    //Le constructeur oblige la présence d'un cours pour satisfaire l'exigence 1..* du lien entre Programme et Cours.
+    public Programme(int idProgramme, string titreProgramme, DateTime dateCreation, int nombreDeCredit, int dureeProgrammeEnMois, Cours cours)
     {
         this.idProgramme = idProgramme;
         this.titreProgramme = titreProgramme;
@@ -25,6 +21,7 @@ public class Programme
         this.nombreDeCredit = nombreDeCredit;
         this.dureeProgrammeEnMois = dureeProgrammeEnMois;
         this.listeCours = new HashSet<Cours>();
+        this.listeCours.Add(cours);
         nombreTotalProgramme++;
     }
 
@@ -60,14 +57,17 @@ public class Programme
 
     public static int NombreTotalProgramme => nombreTotalProgramme;
 
+    //Fonction pour afficher les détails du programme. Pour la liste des cours seuelement le nom est affiché.
     public void afficherProgramme()
     {
+        Console.WriteLine("\n################################################");
         Console.WriteLine($"ID du programme: {IdProgramme}");
         Console.WriteLine($"Nom du programme: {TitreProgramme}");
         Console.WriteLine($"Date de création: {DateCreation}");
         Console.WriteLine($"Nombre de crédit: {NombreDeCredit}");
         Console.WriteLine($"Durée du programme en mois: {DureeProgrammeEnMois}");
-        Console.Write($"Les cours du programme sont: {String.Join(", ", ListeCours)}");
+        Console.WriteLine($"Les cours du programme sont: {String.Join(", ", extraireNomCours())}");
+        Console.WriteLine("################################################\n");
     }
 
     public void afficherNombreTotal()
@@ -77,6 +77,18 @@ public class Programme
 
     public HashSet<Cours> ListeCours => listeCours;
 
+    //Fonction pour extraire les nom de cours qui seront utilisés dans la function afficherProgramme
+    private List<string> extraireNomCours()
+    {
+        List<string> listeNomCours = new List<string>();
+        foreach (Cours cours in ListeCours)
+        {
+            listeNomCours.Add(cours.NomCours);
+        }
+        return listeNomCours;
+    }
+    
+    //Fonction pour ajouter un cours au programme.
     public Boolean ajouterCours(Cours cours)
     {
         if (ListeCours.Contains(cours))

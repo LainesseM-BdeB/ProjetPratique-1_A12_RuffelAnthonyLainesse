@@ -2,12 +2,15 @@
 
 using ProjetPratique_1_A12_RuffelAnthonyLainesse.model;
 
+
+//TEST pour valider le bon fonctionnement de la classe Programme
 Programme analysteProgrammeur = new Programme(
     1
     , "Analyste-Programmeur"
     , DateTime.Now
     , 6
-    , 24
+    , 24,
+    new Cours("Test1", "Test1", "Test1", typeSalle.LABORATOIRE)
     );
 
 analysteProgrammeur.afficherProgramme();
@@ -19,11 +22,12 @@ Programme cyberSecurite = new Programme(
     , "Cyber Sécurité"
     , DateTime.Now
     , 8
-    , 36
+    , 36,
+    new Cours("Test1", "Test1", "Test1", typeSalle.LABORATOIRE)
 );
+
+cyberSecurite.ajouterCours(new Cours("Test2", "Test2", "Test2", typeSalle.LABORATOIRE));
 
 cyberSecurite.afficherProgramme();
 cyberSecurite.afficherNombreTotal();
-
-Cours cour = new Cours( "BigData", "Categorie", 0, cyberSecurite);
-Console.WriteLine(cour.SigleCours);
+//FIN TEST pour valider le bon fonctionnement de la classe Programme
