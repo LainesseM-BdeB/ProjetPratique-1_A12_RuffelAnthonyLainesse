@@ -8,6 +8,8 @@ public class Programme
     private int nombreDeCredit;
     private int dureeProgrammeEnMois;
 
+    private HashSet<Cours> listeCours;
+
     private static int nombreTotalProgramme = 0;
 
     public Programme()
@@ -22,6 +24,7 @@ public class Programme
         this.dateCreation = dateCreation;
         this.nombreDeCredit = nombreDeCredit;
         this.dureeProgrammeEnMois = dureeProgrammeEnMois;
+        this.listeCours = new HashSet<Cours>();
         nombreTotalProgramme++;
     }
 
@@ -69,5 +72,21 @@ public class Programme
     public void afficherNombreTotal()
     {
         Console.WriteLine($"Nombre total de programme: {NombreTotalProgramme}");
+    }
+
+    public HashSet<Cours> ListeCours => listeCours;
+
+    public Boolean ajouterCours(Cours cours)
+    {
+        if (ListeCours.Contains(cours))
+        {
+            Console.WriteLine("Le cours est déjà dans la liste des cours du programme.");
+            return false;
+        }
+        else
+        {
+            ListeCours.Add(cours);
+            return true;
+        }
     }
 }
