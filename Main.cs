@@ -30,4 +30,8 @@ cyberSecurite.ajouterCours(new Cours("Test2", "Test2", "Test2", typeSalle.LABORA
 
 cyberSecurite.afficherProgramme();
 cyberSecurite.afficherNombreTotal();
-//FIN TEST pour valider le bon fonctionnement de la classe Programme
+
+
+// TEST POUR VALIDER LA CLASSE Cours
+Cours cour1 = new Cours("BI", "Categorie", 0, analysteProgrammeur);
+Console.WriteLine(cour1.SigleCours);

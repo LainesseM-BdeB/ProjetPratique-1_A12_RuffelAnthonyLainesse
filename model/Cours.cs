@@ -47,7 +47,6 @@ public class Cours
     public string SigleCours
     {
         get => sigleCours;
-        set => sigleCours = value ?? throw new ArgumentNullException(nameof(value));
     }
 
     public string NomCours
