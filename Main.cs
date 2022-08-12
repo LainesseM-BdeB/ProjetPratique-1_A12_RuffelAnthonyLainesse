@@ -24,3 +24,6 @@ Programme cyberSecurite = new Programme(
 
 cyberSecurite.afficherProgramme();
 cyberSecurite.afficherNombreTotal();
+
+Cours cour = new Cours( "BigData", "Categorie", 0, cyberSecurite);
+Console.WriteLine(cour.SigleCours);
