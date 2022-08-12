@@ -31,7 +31,6 @@ Programme cyberSecurite = new Programme(
 );
 
 Cours test2 = new Cours("Test2", "Test2", typeSalle.LABORATOIRE, cyberSecurite);
-cyberSecurite.ajouterCours(test2);
 
 cyberSecurite.afficherProgramme();
 cyberSecurite.afficherNombreTotal();
