@@ -28,7 +28,7 @@ namespace ProjetPratique_1_A12_RuffelAnthonyLainesse.model
 
         public void afficherDetailCours()
         {
-
+            base.afficherDetailCours();
             Console.WriteLine($"Type de System Exploitation: {this.typeSystemExploitation}");
 
 
