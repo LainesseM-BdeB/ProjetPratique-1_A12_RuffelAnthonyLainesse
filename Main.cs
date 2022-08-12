@@ -10,7 +10,9 @@ Programme analysteProgrammeur = new Programme(
     , DateTime.Now
     , 6
     , 24,
-    new Cours("Test1", "Test1", "Test1", typeSalle.LABORATOIRE)
+    "Test1",
+    "Test1",
+    typeSalle.LABORATOIRE
     );
 
 analysteProgrammeur.afficherProgramme();
@@ -23,10 +25,12 @@ Programme cyberSecurite = new Programme(
     , DateTime.Now
     , 8
     , 36,
-    new Cours("Test1", "Test1", "Test1", typeSalle.LABORATOIRE)
+    "Test1",
+    "Test1",
+    typeSalle.LABORATOIRE
 );
 
-cyberSecurite.ajouterCours(new Cours("Test2", "Test2", "Test2", typeSalle.LABORATOIRE));
+cyberSecurite.ajouterCours(new Cours("Test2", "Test2", typeSalle.LABORATOIRE, cyberSecurite));
 
 cyberSecurite.afficherProgramme();
 cyberSecurite.afficherNombreTotal();
