@@ -13,36 +13,20 @@ public class Cours
     private string categorieCours;
     private typeSalle typeSalleCours;
 
-    
 
-    public Cours(string nomCours, string categorieCours, typeSalle typeSalleCours, Programme programme)
+    public Cours()
     {
-        this.sigleCours = GenererSigleCours(nomCours, programme);
+    }
+
+    public Cours(string sigleCours, string nomCours, string categorieCours, typeSalle typeSalleCours)
+    {
+        this.sigleCours = sigleCours;
         this.nomCours = nomCours;
         this.categorieCours = categorieCours;
         this.typeSalleCours = typeSalleCours;
     }
 
-    public string GenererSigleCours(String nomCours, Programme programme)
-    {
-        string sigle;
-        if (nomCours.Length < 3)
-        {
-            sigle = this.nomCours;
-            for (int i = 0; i < 3 - nomCours.Length; i++)
-            {
-                sigle += "X";
-            }
-        }
-        else
-        {
-            sigle = nomCours.Substring(0, 3);
-        }
-
-        string month = DateTime.Now.Month.ToString();
-        string pair = (programme.DureeProgrammeEnMois % 2) == 0 ? "P" : "I";
-        return sigle + "-" + month + "-" + pair;
-    }
+    
 
     public string SigleCours
     {
