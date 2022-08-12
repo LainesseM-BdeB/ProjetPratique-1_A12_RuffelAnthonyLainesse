@@ -26,10 +26,7 @@ public class Cours
         this.typeSalleCours = typeSalleCours;
     }
 
-    public genererSigle(string nomCours)
-    {
-
-    }
+    
 
     public string SigleCours
     {
