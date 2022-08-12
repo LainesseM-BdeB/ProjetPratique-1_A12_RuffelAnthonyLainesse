@@ -12,8 +12,8 @@ public class Programme
 
     private static int nombreTotalProgramme = 0;
     
-    //Le constructeur oblige la présence d'un cours pour satisfaire l'exigence 1..* du lien entre Programme et Cours.
-    public Programme(int idProgramme, string titreProgramme, DateTime dateCreation, int nombreDeCredit, int dureeProgrammeEnMois, Cours cours)
+    //Le constructeur oblige la présence des infromations d'un cours pour satisfaire l'exigence 1 à 1..* du lien entre Programme et Cours.
+    public Programme(int idProgramme, string titreProgramme, DateTime dateCreation, int nombreDeCredit, int dureeProgrammeEnMois, string nomCours, string categorieCours, typeSalle typeSalleCours)
     {
         this.idProgramme = idProgramme;
         this.titreProgramme = titreProgramme;
@@ -21,6 +21,7 @@ public class Programme
         this.nombreDeCredit = nombreDeCredit;
         this.dureeProgrammeEnMois = dureeProgrammeEnMois;
         this.listeCours = new HashSet<Cours>();
+        Cours cours = new Cours(nomCours, categorieCours, typeSalleCours, this);
         this.listeCours.Add(cours);
         nombreTotalProgramme++;
     }
@@ -89,17 +90,29 @@ public class Programme
     }
     
     //Fonction pour ajouter un cours au programme.
-    public Boolean ajouterCours(Cours cours)
+    public void ajouterCours(Cours cours)
     {
         if (ListeCours.Contains(cours))
         {
-            Console.WriteLine("Le cours est déjà dans la liste des cours du programme.");
-            return false;
+            Console.WriteLine($"Le cours, {cours.SigleCours}, est déjà dans la liste des cours du programme {TitreProgramme}.");
         }
         else
         {
             ListeCours.Add(cours);
-            return true;
+            Console.WriteLine($"Le cours, {cours.SigleCours}, à été ajouté à la liste des cours du programme {TitreProgramme}.");
+        }
+    }
+
+    public void enleverCours(Cours cours)
+    {
+        if (ListeCours.Contains(cours))
+        {
+            ListeCours.Remove(cours);
+            Console.WriteLine($"Le cours, {cours.SigleCours}, a été retiré de la liste des cours du programme {TitreProgramme}.");
+        }
+        else
+        {
+            Console.WriteLine($"Le cours, {cours.SigleCours}, n'existe pas dans la liste des cours du programme {TitreProgramme}.");
         }
     }
 }

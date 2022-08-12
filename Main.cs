@@ -3,8 +3,6 @@
 using ProjetPratique_1_A12_RuffelAnthonyLainesse.model;
 
 
-
-
 //TEST pour valider le bon fonctionnement de la classe Programme
 Programme analysteProgrammeur = new Programme(
     1
@@ -12,7 +10,9 @@ Programme analysteProgrammeur = new Programme(
     , DateTime.Now
     , 6
     , 24,
-    new Cours("Test1", "Test1", "Test1", typeSalle.LABORATOIRE)
+    "Test1",
+    "Test1",
+    typeSalle.LABORATOIRE
     );
 
 analysteProgrammeur.afficherProgramme();
@@ -25,15 +25,17 @@ Programme cyberSecurite = new Programme(
     , DateTime.Now
     , 8
     , 36,
-    new Cours("Test1", "Test1", "Test1", typeSalle.LABORATOIRE)
+    "Test1",
+    "Test1",
+    typeSalle.LABORATOIRE
 );
 
-cyberSecurite.ajouterCours(new Cours("Test2", "Test2", "Test2", typeSalle.LABORATOIRE));
+Cours test2 = new Cours("Test2", "Test2", typeSalle.LABORATOIRE, cyberSecurite);
+cyberSecurite.ajouterCours(test2);
 
 cyberSecurite.afficherProgramme();
 cyberSecurite.afficherNombreTotal();
 
-
-// TEST POUR VALIDER LA CLASSE Cours
-Cours cour1 = new Cours("BI", "Categorie", 0, analysteProgrammeur);
-Console.WriteLine(cour1.SigleCours);
+cyberSecurite.enleverCours(test2);
+cyberSecurite.afficherProgramme();
+//FIN TEST pour valider le bon fonctionnement de la classe Programme
