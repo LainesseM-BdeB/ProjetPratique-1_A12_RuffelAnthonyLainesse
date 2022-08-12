@@ -2,6 +2,8 @@
 
 using ProjetPratique_1_A12_RuffelAnthonyLainesse.model;
 
+
+//TEST pour valider le bon fonctionnement de la classe Programme
 Programme analysteProgrammeur = new Programme(
     1
     , "Analyste-Programmeur"
@@ -28,3 +30,4 @@ cyberSecurite.ajouterCours(new Cours("Test2", "Test2", "Test2", typeSalle.LABORA
 
 cyberSecurite.afficherProgramme();
 cyberSecurite.afficherNombreTotal();
+//FIN TEST pour valider le bon fonctionnement de la classe Programme
