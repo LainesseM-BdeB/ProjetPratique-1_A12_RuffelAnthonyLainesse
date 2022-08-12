@@ -21,6 +21,7 @@ public class Cours
         this.nomCours = nomCours;
         this.categorieCours = categorieCours;
         this.typeSalleCours = typeSalleCours;
+        programme.ListeCours.Add(this);
     }
 
     public string GenererSigleCours(String nomCours, Programme programme)
