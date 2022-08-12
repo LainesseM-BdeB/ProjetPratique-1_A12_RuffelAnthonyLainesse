@@ -17,20 +17,13 @@
         
         }
         
-        public void AfficherCredits() {
+      public void afficherDetailCours()
+    {
+    
+            Console.WriteLine($"Nombre de credit: {this.nombreCredits}");
 
-            while (nombreCredits > 0)
-            {
-
-                Console.WriteLine("Nombre de crédit pour le cours : " + nombreCredits);
-
-            }
 
         }
-
-        
-
-    }
 
     
 }

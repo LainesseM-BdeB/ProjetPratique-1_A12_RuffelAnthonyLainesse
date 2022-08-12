@@ -26,21 +26,16 @@ namespace ProjetPratique_1_A12_RuffelAnthonyLainesse.model
             set => typeSystemExploitation = value;
         }
 
-        public void AfficherSystemExploitation()
+        public void afficherDetailCours()
         {
 
-            while (typeSystemExploitation != null)
-            {
-
-                Console.WriteLine(typeSystemExploitation);
-
-            }
+            Console.WriteLine($"Type de System Exploitation: {this.typeSystemExploitation}");
 
 
         }
 
 
-      
+
     }
 }
 
