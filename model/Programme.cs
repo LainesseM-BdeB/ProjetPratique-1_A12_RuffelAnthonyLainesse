@@ -22,7 +22,6 @@ public class Programme
         this.dureeProgrammeEnMois = dureeProgrammeEnMois;
         this.listeCours = new HashSet<Cours>();
         Cours cours = new Cours(nomCours, categorieCours, typeSalleCours, this);
-        this.listeCours.Add(cours);
         nombreTotalProgramme++;
     }
 
