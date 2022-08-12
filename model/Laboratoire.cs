@@ -14,7 +14,7 @@ namespace ProjetPratique_1_A12_RuffelAnthonyLainesse.model
 
         private typeSystemExploitation typeSystemExploitation;
 
-        public Laboratoire(string sigleCours, string nomCours, string categorieCours, typeSalle typeSalleCours, typeSystemExploitation systemExploitation):  base(sigleCours, nomCours, categorieCours, typeSalleCours) 
+        public Laboratoire( string nomCours, string categorieCours, typeSalle typeSalleCours, Programme programme, typeSystemExploitation systemExploitation):  base(nomCours, categorieCours, typeSalleCours, programme) 
         {
 
             this.typeSystemExploitation = systemExploitation;
